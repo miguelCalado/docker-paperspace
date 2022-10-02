@@ -1,5 +1,6 @@
 # Paperspace Dockerfile for Gradient base image
-# Paperspace image is located in Dockerhub registry: paperspace/gradient_base
+# Paperspace image is located in Dockerhub registry: miguelcalado/docker-paperspace
+# or in https://hub.docker.com/repository/docker/miguelcalado/docker-paperspace
 
 # ==================================================================
 # module list
