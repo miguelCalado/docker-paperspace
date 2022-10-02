@@ -168,7 +168,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         opencv-python==4.6.0.66 \
         msal \
         elementpath \
-        lxml==4.5.0 \
+        lxml==4.9.1 \
         && \
 
 
