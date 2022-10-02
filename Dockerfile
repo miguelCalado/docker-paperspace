@@ -169,6 +169,8 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         msal \
         elementpath \
         lxml==4.9.1 \
+        wandb \
+        jupyter_resource_usage \
         && \
 
 
@@ -206,6 +208,8 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 
     $PIP_INSTALL \
         tensorflow==2.9.1 \
+        tensorflow_addons \
+        ftfy \
         && \
 
 # ==================================================================
@@ -237,6 +241,8 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     jupyter contrib nbextension install --sys-prefix && \
     jupyter nbextension enable highlight_selected_word/main && \
     jupyter nbextension enable execute_time/ExecuteTime && \
+    jupyter nbextension enable toc2/main && \
+    jupyter nbextension enable jupyter_resource_usage/main && \
 
 # ==================================================================
 # Conda
