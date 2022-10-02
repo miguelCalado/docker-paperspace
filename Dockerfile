@@ -236,6 +236,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     $PIP_INSTALL jupyter_contrib_nbextensions jupyterlab-git && \
     jupyter contrib nbextension install --sys-prefix && \
     jupyter nbextension enable highlight_selected_word/main && \
+    jupyter nbextension enable execute_time/ExecuteTime && \
 
 # ==================================================================
 # Conda
