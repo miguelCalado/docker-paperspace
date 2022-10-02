@@ -54,7 +54,7 @@ ENV SHELL=/bin/bash
 SHELL ["/bin/bash", "-c"]
 
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    PIP_INSTALL="python3 -m pip --no-cache-dir install" && \
+    PIP_INSTALL="pip --no-cache-dir install" && \
     GIT_CLONE="git clone --depth 10" && \
 
     rm -rf /var/lib/apt/lists/* \
@@ -140,35 +140,35 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 
     # Intalling Python packages
     $PIP_INSTALL \
-        numpy \
-        scipy \
-        pandas \
-        cloudpickle \
-        scikit-image \
-        scikit-learn \
-        matplotlib \
-        ipython \
-        ipykernel \
-        ipywidgets \
-        gradient \
-        Cython \
-        tqdm \
-        gdown \
-        xgboost \ 
+        numpy==1.23.1 \
+        scipy==1.8.1 \
+        pandas==1.4.3 \
+        cloudpickle==2.1.0 \
+        scikit-image==0.19.3 \
+        scikit-learn==1.1.1 \
+        matplotlib==3.5.2 \
+        ipython==8.4.0 \
+        ipykernel==6.15.1 \
+        ipywidgets==7.7.1 \
+        gradient==2.0.5 \
+        Cython==0.29.30 \
+        tqdm==4.64.0 \
+        gdown==4.5.1 \
+        xgboost==1.6.1 \ 
         pillow \
-        seaborn \
-        SQLAlchemy \
-        spacy \
-        nltk \
-        jsonify \
-        boto3 \
-        transformers \
-        sentence-transformers \
-        datasets \
-        opencv-python \
+        seaborn==0.11.2 \
+        SQLAlchemy==1.4.39 \
+        spacy==3.4.0 \
+        nltk==3.7 \
+        jsonify==0.5 \
+        boto3==1.24.27 \
+        transformers==4.20.1 \
+        sentence-transformers==2.2.2 \
+        datasets==2.3.2 \
+        opencv-python==4.6.0.66 \
         msal \
         elementpath \
-        lxml \
+        lxml==4.5.0 \
         && \
 
 
@@ -205,7 +205,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     # https://www.tensorflow.org/install/pip, so is now not -gpu
 
     $PIP_INSTALL \
-        tensorflow \
+        tensorflow==2.9.1 \
         && \
 
 # ==================================================================
@@ -213,10 +213,10 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
 
-    $PIP_INSTALL \
-        "jax[cuda111]" -f https://storage.googleapis.com/jax-releases/jax_releases.html \
-        https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.3.8+cuda11.cudnn82-cp39-none-manylinux2014_x86_64.whl \
-        && \
+    # $PIP_INSTALL \
+    #     "jax[cuda111]" -f https://storage.googleapis.com/jax-releases/jax_releases.html \
+    #     https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.3.8+cuda11.cudnn82-cp39-none-manylinux2014_x86_64.whl \
+    #     && \
 
 # ==================================================================
 # JupyterLab
