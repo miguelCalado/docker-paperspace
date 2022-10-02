@@ -54,7 +54,7 @@ ENV SHELL=/bin/bash
 SHELL ["/bin/bash", "-c"]
 
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    PIP_INSTALL="python3 -m pip --no-cache-dir install --upgrade" && \
+    PIP_INSTALL="python3 -m pip --no-cache-dir install" && \
     GIT_CLONE="git clone --depth 10" && \
 
     rm -rf /var/lib/apt/lists/* \
