@@ -261,5 +261,11 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/*
 
+# ==================================================================
+# Add Jupyter Notebook configurations
+# ------------------------------------------------------------------
+
+COPY notebook.json ./
+RUN rm ~/.jupyter/nbconfig/notebook.json && mv ./notebook.json ~/.jupyter/nbconfig/
 
 EXPOSE 8888 6006

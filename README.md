@@ -13,6 +13,9 @@ docker login -u <username> -p <password>
 # Build the image
 docker build -t miguelcalado/docker-paperspace:latest .
 
+# Test the build
+docker run -it --name myapp --rm --volume --net=host miguelcalado/docker-paperspace:latest bash
+
 # Deploy it to DockerHub
 docker push miguelcalado/docker-paperspace:latest
 ```
