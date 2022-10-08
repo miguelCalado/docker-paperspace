@@ -45,6 +45,12 @@
 # lxml                   4.9.1    (pip)
 # wandb                  latest   (pip)
 # jupyter_resource_usage latest   (pip)
+# types-requests         latest   (pip)
+# pytest                 latest   (pip)
+# isort                  latest   (pip)
+# black                  latest   (pip)
+# flake8                 latest   (pip)
+# mypy                   latest   (pip)
 # ==================================================================
 
 # Ubuntu 20.04, CUDA Toolkit 11.2, CUDNN 8
@@ -174,6 +180,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         lxml==4.9.1 \
         wandb \
         jupyter_resource_usage \
+        types-requests \
+        pytest \
+        isort \
+        black \
+        flake8 \
+        mypy \
         && \
 
 
