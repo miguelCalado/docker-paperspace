@@ -258,6 +258,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     jupyter nbextension enable execute_time/ExecuteTime && \
     jupyter nbextension enable toc2/main && \
     jupyter nbextension enable jupyter_resource_usage/main && \
+    jupyter nbextension enable varInspector/main && \
 
 # ==================================================================
 # Conda
