@@ -109,6 +109,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         ffmpeg \
         libsm6 \
         libxext6 \
+        cron \
         && \
 
     rm -f /usr/bin/man && \
