@@ -173,7 +173,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         nltk==3.7 \
         jsonify==0.5 \
         boto3==1.24.27 \
-        transformers==4.20.1 \
+        transformers==4.22.1 \
         sentence-transformers==2.2.2 \
         datasets==2.3.2 \
         opencv-python==4.6.0.66 \
@@ -189,6 +189,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         flake8 \
         mypy \
         pyopenssl \
+        diffusers==0.4.1 \
         && \
 
 
