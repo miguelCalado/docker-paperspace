@@ -56,7 +56,7 @@
 
 # Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
 
-FROM nvcr.io/nvidia/cuda:11.6.0-cudnn8-devel-ubuntu20.04
+FROM nvcr.io/nvidia/cuda:11.2.1-cudnn8-devel-ubuntu20.04
 ENV LANG C.UTF-8
 
 # Setting shell to bash
@@ -209,13 +209,6 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     $PIP_INSTALL \
         jupyter \
         && \
-
-
-# ==================================================================
-# PyTorch
-# ------------------------------------------------------------------
-
-    $PIP_INSTALL torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 && \
         
 
 # ==================================================================
@@ -230,6 +223,13 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         tensorflow_addons \
         ftfy \
         && \
+
+# ==================================================================
+# PyTorch
+# ------------------------------------------------------------------
+
+    $PIP_INSTALL torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 && \
+
 
 # ==================================================================
 # JAX
