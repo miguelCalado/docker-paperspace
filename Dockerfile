@@ -54,9 +54,9 @@
 # pyopenssl              latest   (pip)
 # ==================================================================
 
-# Ubuntu 20.04, CUDA Toolkit 11.2, CUDNN 8
+# Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
 
-FROM nvcr.io/nvidia/cuda:11.2.1-cudnn8-devel-ubuntu20.04
+FROM nvcr.io/nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
 ENV LANG C.UTF-8
 
 # Setting shell to bash
@@ -215,7 +215,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # PyTorch
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL torch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 && \
+    $PIP_INSTALL torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 && \
         
 
 # ==================================================================
