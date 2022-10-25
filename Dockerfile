@@ -111,6 +111,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         libsm6 \
         libxext6 \
         cron \
+        tmux \
         && \
 
     rm -f /usr/bin/man && \
