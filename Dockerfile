@@ -5,7 +5,7 @@
 # ==================================================================
 # module list
 # ------------------------------------------------------------------
-# python                 3.9.13   (apt)
+# python                 3.11     (apt)
 # jupyter                latest   (pip)
 # pytorch                latest   (pip)
 # tensorflow             2.9.1    (pip)
@@ -128,26 +128,26 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # Python
 # ------------------------------------------------------------------
 
-    # Installing python3.9
+    # Installing python3.11
     DEBIAN_FRONTEND=noninteractive \
     $APT_INSTALL software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa -y && \
 
     DEBIAN_FRONTEND=noninteractive $APT_INSTALL \
-    python3.9 \
-    python3.9-dev \
+    python3.11 \
+    python3.11-dev \
     python3-distutils-extra \
     && \
 
     # Installing pip
     wget -O ~/get-pip.py \
     https://bootstrap.pypa.io/get-pip.py && \
-    python3.9 ~/get-pip.py && \
+    python3.11 ~/get-pip.py && \
 
     # Add symlink so python and python3 commands use same
-    # python3.9 executable
-    ln -s /usr/bin/python3.9 /usr/local/bin/python3 && \
-    ln -s /usr/bin/python3.9 /usr/local/bin/python && \
+    # python3.11 executable
+    ln -s /usr/bin/python3.11 /usr/local/bin/python3 && \
+    ln -s /usr/bin/python3.11 /usr/local/bin/python && \
 
     # Intalling Python packages
     $PIP_INSTALL \
