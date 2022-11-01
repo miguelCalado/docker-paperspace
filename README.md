@@ -1,10 +1,17 @@
-# Docker Paperspace
+<img align="left" width="165" height="165" src="https://i.imgur.com/SWwQJRe.png" title="PaperSpace logo">
 
-Dockerfiles for a custom docker container used in [Paperspace](http://paperspace.com/).
+#
+# Docker Paperspace
+#
+
+
+**Summary**: Dockerfile for my custom Docker image used in [Paperspace](http://paperspace.com/) Gradient Notebooks.
+It includes my personal setup and other ML/DL libraries (see [Setup-Info.md](Setup-Info.md) for more details).
+The Docker image is hosted on [Dockerhub](https://hub.docker.com/repository/docker/miguelcalado/docker-paperspace).
 
 **Issue**: Notebook instances deletes every environment variable created in the current session upon restarting. This can be troublesome whenever you've installed a new python package, set up cloud or Git credentials, or added a new nbextension to jupyter notebook/lab, requiring to repeat the same process and reinstall all the changes you made in the next session.
 
-**Solution**: Create a Docker image, push it to a registry (e.g. DockerHub) and add it to your Notebook instance when creating. Changes that you want to be permanent, for instance, adding ```pandas``` to the python environment, you'll just need to modify the Dockerfile, build the image and upload it to the registry. In the next Notebook instantiation, Paperspace will pull the newest image available in your registry repository.
+**Solution**: Create a Docker image, push it to a registry (e.g. [DockerHub](hub.docker.com)) and link it to your Notebook instance when creating. Changes that you want to be permanent, for instance, adding ```pandas``` to the python environment, you'll just need to modify the Dockerfile, build the image and upload it to the registry. In the next Notebook instantiation, Paperspace will pull the newest image available in your registry repository.
 
 # Setup
 
@@ -24,9 +31,9 @@ docker run -it --name myapp --rm --volume --net=host miguelcalado/docker-papersp
 docker push miguelcalado/docker-paperspace:latest
 ```
 
-**2. CD**
+**2. Countinous Delivery (Github Actions)**
 
-Commit and push to the repository, GitHub deals with the rest:
+Push your changes to the repository, GitHub deals with the rest:
 
 ```bash
 name: cd
@@ -60,7 +67,7 @@ jobs:
           tags: <username>/<docker-image>:<tag>
 ```
 
-Lastly, associate the Docker Image pushed to a registry with your to be created Notebook. Go to advanced settings and add the name of the repository to the **Container name**.
+Lastly, associate the Docker image pushed to a registry with your to be created Notebook. Go to advanced settings and add the name of the repository to the **Container name**.
 
 <p align="center">
   <img width="666" src="https://i.imgur.com/scY3R7H.png">
