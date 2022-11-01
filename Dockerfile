@@ -52,6 +52,7 @@
 # flake8                 latest   (pip)
 # mypy                   latest   (pip)
 # pyopenssl              latest   (pip)
+# nbqa                   latest   (pip)
 # ==================================================================
 
 # Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
@@ -191,6 +192,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         mypy \
         pyopenssl \
         diffusers==0.4.1 \
+        nbqa \
         && \
 
 
