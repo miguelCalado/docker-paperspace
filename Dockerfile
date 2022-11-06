@@ -53,6 +53,7 @@
 # mypy                   latest   (pip)
 # pyopenssl              latest   (pip)
 # nbqa                   latest   (pip)
+# difflib                latest   (pip)
 # ==================================================================
 
 # Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
@@ -191,7 +192,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         flake8 \
         mypy \
         pyopenssl \
-        diffusers==0.4.1 \
+        difflib \
         nbqa \
         && \
 
