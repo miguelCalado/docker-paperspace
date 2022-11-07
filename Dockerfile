@@ -170,7 +170,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         gdown==4.5.1 \
         xgboost==1.6.1 \ 
         pillow \
-        seaborn==0.11.2 \
+        seaborn==0.12.0 \
         SQLAlchemy==1.4.39 \
         spacy==3.4.0 \
         nltk==3.7 \
