@@ -2,8 +2,9 @@ name: cd
 
 on:
   push:
-    branches:
-      - 'main'
+    paths:
+      - 'notebook.json'
+      - 'Dockerfile'
 
 jobs:
   docker:
