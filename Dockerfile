@@ -54,6 +54,7 @@
 # pyopenssl              latest   (pip)
 # nbqa                   latest   (pip)
 # cdifflib               latest   (pip)
+# colour                 latest   (pip)
 # ==================================================================
 
 # Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
@@ -194,6 +195,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         pyopenssl \
         cdifflib \
         nbqa \
+        colour \
         && \
 
 
