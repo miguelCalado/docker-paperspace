@@ -55,6 +55,8 @@
 # nbqa                   latest   (pip)
 # cdifflib               latest   (pip)
 # colour                 latest   (pip)
+# tensorflow_datasets    latest   (pip)
+# pycocotools            latest   (pip)
 # ==================================================================
 
 # Ubuntu 20.04, CUDA Toolkit 11.8, CUDNN 8
@@ -196,6 +198,8 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         cdifflib \
         nbqa \
         colour \
+        pycocotools \
+        tensorflow_datasets \
         && \
 
 
