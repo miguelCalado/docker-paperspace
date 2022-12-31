@@ -154,6 +154,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     # python3.9 executable
     ln -s /usr/bin/python3.9 /usr/local/bin/python3 && \
     ln -s /usr/bin/python3.9 /usr/local/bin/python && \
+    
+    # Remove `site-packages` and soft link it to `dist-packages` to allow `pip install -e`
+    # Source: https://stackoverflow.com/a/72962729/8527630
+    rm -rf /usr/lib/python3.9/site-packages/ ; && \
+    ln -s /usr/local/lib/python3.9/dist-packages /usr/lib/python3.9/site-packages && \
+
 
     # Intalling Python packages
     $PIP_INSTALL \
