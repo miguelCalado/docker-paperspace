@@ -6,8 +6,8 @@
 #
 
 
-**Summary**: Dockerfile for my custom Docker image used in [Paperspace](http://paperspace.com/) Gradient Notebooks.
-It includes my personal setup and other ML/DL libraries (see [Setup-Info.md](Setup-Info.md) for more details).
+**Summary**: Dockerfile for my custom Docker image used in [Paperspace Gradient Notebooks](http://paperspace.com/).
+It includes my personal setup and other ML/DL libraries (see [Setup-Info](Setup-Info.md) for more details).
 The Docker image is hosted on [Dockerhub](https://hub.docker.com/repository/docker/miguelcalado/docker-paperspace).
 
 **Issue**: Notebook instances deletes every environment variable created in the current session upon restarting. This can be troublesome whenever you've installed a new python package, set up cloud or Git credentials, or added a new nbextension to jupyter notebook/lab, requiring to repeat the same process and reinstall all the changes you made in the next session.
