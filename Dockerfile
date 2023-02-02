@@ -8,7 +8,7 @@
 # python                 3.9      (apt)
 # jupyter                latest   (pip)
 # pytorch                latest   (pip)
-# tensorflow             2.9.1    (pip)
+# tensorflow             2.11.0   (pip)
 # tensorflow_addons      latest   (pip)
 # ftfy                   latest   (pip)
 # jupyterlab             latest   (pip)
@@ -235,7 +235,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     # https://www.tensorflow.org/install/pip, so is now not -gpu
 
     $PIP_INSTALL \
-        tensorflow==2.9.1 \
+        tensorflow==2.11.0 \
         tensorflow_addons \
         ftfy \
         && \
