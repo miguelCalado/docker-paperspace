@@ -10,11 +10,13 @@
 # torch                 1.12.1           (pip)
 # torchvision           0.13.1           (pip)
 # torchaudio            0.12.1           (pip)
-# tensorflow            2.9.2            (pip)
+# tensorflow            2.11.0           (pip)
 # jax                   0.3.23           (pip)
 # transformers          4.21.3           (pip)
 # datasets              2.4.0            (pip)
 # jupyterlab            3.4.6            (pip)
+# jupyter               1.0.0            (pip)
+# notebook              6.4.12           (pip)
 # numpy                 1.23.4           (pip)
 # scipy                 1.9.2            (pip)
 # pandas                1.5.0            (pip)
@@ -41,7 +43,7 @@
 # jsonify               0.5              (pip)
 # opencv-python         4.6.0.66         (pip)
 # sentence-transformers 2.2.2            (pip)
-# wandb                 0.13.4           (pip)
+# wandb                 latest           (pip)
 # nodejs                16.x latest      (apt)
 # default-jre           latest           (apt)
 # default-jdk           latest           (apt)
@@ -132,7 +134,7 @@
     RUN ln -s /usr/bin/python3.9 /usr/local/bin/python3 && \
         ln -s /usr/bin/python3.9 /usr/local/bin/python && \
 
-    # Remove `site-packages` and soft link it to `dist-packages` to allow `pip install -e`
+    # Remove `site-packages` and soft link it to `dist-packages` to allow `pip install -e .`
     # Source: https://stackoverflow.com/a/72962729/8527630
     rm -rf /usr/lib/python3.9/site-packages/ && \
     ln -s /usr/local/lib/python3.9/dist-packages /usr/lib/python3.9/site-packages
@@ -211,7 +213,7 @@
 
     # Based on https://www.tensorflow.org/install/pip
 
-    $PIP_INSTALL tensorflow==2.9.2 && \
+    $PIP_INSTALL tensorflow==2.11.0 && \
 
 
 # ==================================================================
@@ -280,7 +282,7 @@
 
     RUN $PIP_INSTALL \
         jupyterlab==3.4.6 \
-        jupyter \
+        jupyter==1.0.0 \
         notebook==6.4.12
 
 
@@ -300,14 +302,18 @@
         jupyter nbextension enable toc2/main && \
         jupyter nbextension enable jupyter_resource_usage/main && \
         jupyter nbextension enable varInspector/main
-                
 
 # ==================================================================
-# Startup
+# Add Jupyter Notebook configurations
 # ------------------------------------------------------------------
 
     COPY notebook.json ./
     RUN rm ~/.jupyter/nbconfig/notebook.json && mv ./notebook.json ~/.jupyter/nbconfig/
+
+
+# ==================================================================
+# Startup
+# ------------------------------------------------------------------
 
     EXPOSE 8888 6006
 
