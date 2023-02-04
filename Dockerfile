@@ -3,51 +3,6 @@
 # Paperspace Dockerfile for Gradient base image
 # Paperspace image is located in Dockerhub registry: paperspace/gradient_base
 
-# ==================================================================
-# Module list
-# ------------------------------------------------------------------
-# python                3.9.15           (apt)
-# torch                 1.12.1           (pip)
-# torchvision           0.13.1           (pip)
-# torchaudio            0.12.1           (pip)
-# tensorflow            2.11.0           (pip)
-# jax                   0.3.23           (pip)
-# transformers          4.21.3           (pip)
-# datasets              2.4.0            (pip)
-# jupyterlab            3.4.6            (pip)
-# jupyter               1.0.0            (pip)
-# notebook              6.4.12           (pip)
-# numpy                 1.23.4           (pip)
-# scipy                 1.9.2            (pip)
-# pandas                1.5.0            (pip)
-# cloudpickle           2.2.0            (pip)
-# scikit-image          0.19.3           (pip)
-# scikit-learn          1.1.2            (pip)
-# matplotlib            3.6.1            (pip)
-# ipython               8.5.0            (pip)
-# ipykernel             6.16.0           (pip)
-# ipywidgets            8.0.2            (pip)
-# cython                0.29.32          (pip)
-# tqdm                  4.64.1           (pip)
-# gdown                 4.5.1            (pip)
-# xgboost               1.6.2            (pip)
-# pillow                9.2.0            (pip)
-# seaborn               0.12.0           (pip)
-# sqlalchemy            1.4.41           (pip)
-# spacy                 3.4.1            (pip)
-# nltk                  3.7              (pip)
-# boto3                 1.24.90          (pip)
-# tabulate              0.9.0            (pip)
-# future                0.18.2           (pip)
-# gradient              2.0.6            (pip)
-# jsonify               0.5              (pip)
-# opencv-python         4.6.0.66         (pip)
-# sentence-transformers 2.2.2            (pip)
-# wandb                 latest           (pip)
-# nodejs                16.x latest      (apt)
-# default-jre           latest           (apt)
-# default-jdk           latest           (apt)
-
 
 # ==================================================================
 # Initial setup
