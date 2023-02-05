@@ -78,7 +78,7 @@ jobs:
           tags: <username>/<docker-image>:<tag>
 ```
 
-Lastly, associate the Docker image pushed to a registry with your to be created Notebook. Go to advanced settings and add the name of the repository to the **Container name**.
+Lastly, associate the Docker image pushed to a registry with your to-be-created Notebook. Go to advanced settings and add the name of the repository to the **Container name**.
 
 <p align="center">
   <img width="666" src="https://i.imgur.com/scY3R7H.png">
