@@ -11,14 +11,14 @@ The image can be pulled from [DockerHub](https://hub.docker.com/repository/docke
 
 The full specications are available in the following tables:
 
-- [GPU drivers + CUDA](##-GPU-drivers-+-CUDA)
-- [Python packages](##-Python-packages)
-- [Deep learning frameworks](##-Deep-learning-frameworks)
-- [Jupyter Lab/Notebook](##-Jupyter-Lab/Notebook)
-    - [Extensions](###Extensions)
-    - [Macros](###Macros)
+- [GPU drivers + CUDA](#place1)
+- [Python packages](#Python-packages)
+- [Deep learning frameworks](#Deep-learning-frameworks)
+- [Jupyter Lab/Notebook](#place2)
+    - [Extensions](#Extensions)
+    - [Macros](#Macros)
 
-## GPU drivers + CUDA
+## GPU drivers + CUDA<span id="place1"></span>
 
 | **Software** | **Type** | **Version** |
 |:---:|:---:|:---:|
@@ -88,7 +88,7 @@ For the full python packages consult [dependencies.rst](dependencies.rst) - it w
 | Transformers| 4.21.3 | pip3 |
 | Datasets | 2.4.0 | pip3 |
 
-## Jupyter Lab/Notebook
+## Jupyter Lab/Notebook <span id="place2"></span>
 
 | **Python Package** | **Version** | **Install method** |
 |:---:|:---:|:---:|
