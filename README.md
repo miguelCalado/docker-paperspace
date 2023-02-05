@@ -26,13 +26,22 @@ docker login -u <username> -p <password>
 docker build -t miguelcalado/docker-paperspace:latest .
 
 # Test the build
-docker run -it --name paperspace_container --rm --volume --net=host miguelcalado/docker-paperspace:latest bash
+
+# **Option 1** - Run container as bash and initialize a jupyter notebook 
+## Start the container
+docker run -it -p 8888:8888 --name paperspace_container --rm -v $(pwd):/usr/src/project miguelcalado/docker-paperspace:latest bash
+## Start a notebook
+jupyter notebook --ip 0.0.0.0 --allow-root
+
+# **Option 2**: Run the notebook
+## Start container and notebook
+docker run -it -p 8888:8888 miguelcalado/docker-paperspace:latest
 
 # Deploy it to DockerHub
 docker push miguelcalado/docker-paperspace:latest
 ```
 
-**2. Countinous Delivery (Github Actions)**
+**2. Continous Delivery (Github Actions)**
 
 Push your changes to the repository, GitHub deals with the rest:
 
