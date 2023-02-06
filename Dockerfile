@@ -271,6 +271,12 @@
 # Add Jupyter Notebook configurations
 # ------------------------------------------------------------------
 
+    # Enable CPU usage
+    RUN jupyter notebook --generate-config && \
+        echo "c.ResourceUseDisplay.track_cpu_percent = True" >> ~/.jupyter/jupyter_notebook_config.py && \
+        echo "c.ResourceUseDisplay.enable_prometheus_metrics = False" >> ~/.jupyter/jupyter_notebook_config.py
+
+    # Get predefined extensions and macros
     COPY notebook.json ./
     RUN rm ~/.jupyter/nbconfig/notebook.json && mv ./notebook.json ~/.jupyter/nbconfig/
 
