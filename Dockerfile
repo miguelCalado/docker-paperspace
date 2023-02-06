@@ -271,7 +271,7 @@
 # Add Jupyter Notebook configurations
 # ------------------------------------------------------------------
 
-    # Enable CPU usage
+    # Enable CPU usage - if notebook degrading performance please comment the lines below
     RUN jupyter notebook --generate-config && \
         echo "c.ResourceUseDisplay.track_cpu_percent = True" >> ~/.jupyter/jupyter_notebook_config.py && \
         echo "c.ResourceUseDisplay.enable_prometheus_metrics = False" >> ~/.jupyter/jupyter_notebook_config.py
