@@ -236,27 +236,36 @@
     # Based on https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip
 
     RUN $PIP_INSTALL \
-        jupyterlab==3.4.6 \
-        jupyter==1.0.0 \
-        notebook==6.4.12
+            jupyterlab==3.4.6 \
+            jupyter==1.0.0 \
+            notebook==6.4.12
 
 
 # ==================================================================
 # Node.js and Jupyter Notebook Extensions
 # ------------------------------------------------------------------
 
+    # Install dependencies for running Jupyter Notebook/Lab with extensions
     RUN curl -sL https://deb.nodesource.com/setup_16.x | bash  && \
         $APT_INSTALL nodejs  && \
         $PIP_INSTALL \
-        jupyter_contrib_nbextensions==0.5.1 \
-        jupyter_nbextensions_configurator==0.4.1 && \
-        jupyter nbextensions_configurator enable --user && \
-        jupyter contrib nbextension install --user && \
+            jupyter_contrib_nbextensions==0.5.1 \
+            jupyter_nbextensions_configurator==0.4.1
+
+    # Enable nbextensions and menubar
+    RUN jupyter nbextensions_configurator enable --user && \
+        jupyter contrib nbextension install --user
+
+    # Enable Jupyter Notebook extensions
+    RUN jupyter nbextension enable spellchecker/main && \
+        jupyter nbextension enable snippets_menu/main && \
+        jupyter nbextension enable snippets/main && \
+        jupyter nbextension enable freeze/main && \
+        jupyter nbextension enable livemdpreview/livemdpreview && \
         jupyter nbextension enable highlight_selected_word/main && \
         jupyter nbextension enable execute_time/ExecuteTime && \
         jupyter nbextension enable toc2/main && \
-        jupyter nbextension enable jupyter_resource_usage/main && \
-        jupyter nbextension enable varInspector/main
+        jupyter nbextension enable jupyter_resource_usage/main
 
 # ==================================================================
 # Add Jupyter Notebook configurations

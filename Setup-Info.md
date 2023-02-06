@@ -95,19 +95,23 @@ For the full python packages consult [dependencies.rst](dependencies.rst) - it w
 | jupyter | 1.0.0 | pip3 |
 | jupyterlab | 3.4.6 | pip3 |
 | notebook | 6.4.12 | pip3 |
+| nodejs | 16.x latest | apt |
+| jupyter_contrib_nbextensions | 0.5.1 | pip3 |
+| jupyter_nbextensions_configurator | 0.4.1 | pip3 |
 
 ### Extensions
 
 | **Software** | **Version** | **Type** | **Install method** | **Notes** |
 |:---:|:---:|:---:|:---:|:---:|
-| nodejs | 16.x latest | Notebook/Lab requirement | apt | Necessary for both Jupyter Notebook and Lab |
-| jupyter_contrib_nbextensions | 0.5.1 | Notebook extension | pip3 | Installs notebook nbextensions |
-| jupyter_nbextensions_configurator | 0.4.1 | Notebook extension | pip3 | Installs dashboard/file browser to directly install nbextensions |
+| spellchecker | latest | Notebook extension | jupyter nbextension | Highlights incorrectly spelled words in Markdown and Raw cells |
+| snippets_menu | latest | Notebook extension | jupyter nbextension | Menu of code snippets -> **TODO**: Add Stable Diffusion |
+| snippets | latest | Notebook extension | jupyter nbextension | Costumizable code snippets. To add a new one you need to create a `snippets.json` file and `mv snippets.json $(jupyter --data-dir)/nbextensions/snippets/snippets.json` |
+| freeze | latest | Notebook extension | jupyter nbextension | Freeze/block notebook cells |
+| livemdpreview | latest | Notebook extension | jupyter nbextension | Preview markdown cells |
 | highlight_selected_word | latest | Notebook extension | jupyter nbextension | Highlights all instances of the selected word in either the current cell's editor, or in all cells in the notebook |
 | ExecuteTime | latest | Notebook extension | jupyter nbextension | Display when each cell has been executed and how long it took |
 | toc2 | latest | Notebook extension | jupyter nbextension | Displays a table of content based on cell headers |
 | jupyter_resource_usage | latest | Notebook extension | jupyter nbextension | Displays notebook memory usage + CPU and GPU utilization|
-| varInspector | latest | Notebook extension | jupyter nbextension | Variable inspector |
 
 ### Macros
 
@@ -117,11 +121,6 @@ My macros are listed below and you can check for more in [notebook.json](noteboo
 
 ```json
 {
-  "Cell": {
-    "cm_config": {
-      "lineNumbers": true
-    }
-  },
   "keys": {
     "command": {
       "bind": {

@@ -1,5 +1,10 @@
 {
   "load_extensions": {
+    "spellchecker/main": true,
+    "snippets_menu/main": true,
+    "snippets/main": true,
+    "freeze/main": true,
+    "livemdpreview/livemdpreview": true,
     "highlight_selected_word/main": true,
     "execute_time/ExecuteTime": true,
     "toc2/main": true,
@@ -15,14 +20,18 @@
       "bind": {
         "Ctrl-Shift-R": "jupyter-notebook:restart-kernel-and-clear-output",
         "Ctrl-Shift-Z": "jupyter-notebook:run-all-cells-above",
-        "Ctrl-Shift-B": "jupyter-notebook:run-all-cells-below"
+        "Ctrl-Shift-B": "jupyter-notebook:run-all-cells-below",
+        "Alt-Down": "jupyter-notebook:move-cell-down",
+        "Alt-Up": "jupyter-notebook:move-cell-up"
       }
     },
     "edit": {
       "bind": {
         "Ctrl-Shift-R": "jupyter-notebook:restart-kernel-and-clear-output",
         "Ctrl-Shift-Z": "jupyter-notebook:run-all-cells-above",
-        "Ctr;-Shift-B": "jupyter-notebook:run-all-cells-below"
+        "Ctr;-Shift-B": "jupyter-notebook:run-all-cells-below",
+        "Alt-Down": "jupyter-notebook:move-cell-down",
+        "Alt-Up": "jupyter-notebook:move-cell-up"
       }
     }
   }
