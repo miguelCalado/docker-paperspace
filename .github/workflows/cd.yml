@@ -5,6 +5,7 @@ on:
     paths:
       - 'notebook.json'
       - 'Dockerfile'
+      - '.github/workflows/cd.yml'
 
 jobs:
   docker:
