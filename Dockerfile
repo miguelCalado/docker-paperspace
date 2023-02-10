@@ -215,7 +215,6 @@
         elementpath \
         lxml==4.9.1 \
         wandb \
-        jupyter_resource_usage \
         types-requests \
         pytest \
         isort \
@@ -228,6 +227,28 @@
         colour \
         pycocotools \
         tensorflow_datasets
+
+    # # Install miniconda
+    # ENV CONDA_DIR /opt/conda
+    # RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+    #     /bin/bash ~/miniconda.sh -b -p /opt/conda
+
+    # # Put conda in path so we can use conda activate
+    # ENV PATH=$CONDA_DIR/bin:$PATH
+
+    ## CONDA INSTALLATION --> use the latest Anaconda version for linux from their official website. Google it buddy.
+    # RUN rm -rf /opt/conda && \
+    #     wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh && \
+    #     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+    #     rm ~/anaconda.sh && \
+    #     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    #     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    #     find /opt/conda/ -follow -type f -name '*.a' -delete && \
+    #     find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
+    #     /opt/conda/bin/conda clean -afy
+        
+    # ## ADD CONDA PATH TO LINUX PATH 
+    # ENV PATH /opt/conda/bin:$PATH
 
 # ==================================================================
 # JupyterLab & Notebook
@@ -250,7 +271,8 @@
         $APT_INSTALL nodejs  && \
         $PIP_INSTALL \
             jupyter_contrib_nbextensions==0.5.1 \
-            jupyter_nbextensions_configurator==0.4.1
+            jupyter_nbextensions_configurator==0.4.1 \
+            jupyter_resource_usage==0.7.1
 
     # Enable nbextensions and menubar
     RUN jupyter nbextensions_configurator enable --user && \
