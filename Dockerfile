@@ -236,7 +236,7 @@
     # # Put conda in path so we can use conda activate
     # ENV PATH=$CONDA_DIR/bin:$PATH
 
-    ## CONDA INSTALLATION --> use the latest Anaconda version for linux from their official website. Google it buddy.
+    # CONDA INSTALLATION --> use the latest Anaconda version for linux from their official website. Google it buddy.
     # RUN rm -rf /opt/conda && \
     #     wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh -O ~/anaconda.sh && \
     #     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
@@ -250,10 +250,33 @@
     # ## ADD CONDA PATH TO LINUX PATH 
     # ENV PATH /opt/conda/bin:$PATH
 
+    # ENV PATH="/root/miniconda3/bin:${PATH}"
+    # ARG PATH="/root/miniconda3/bin:${PATH}"
+    # RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    #     && mkdir /root/.conda \
+    #     && bash Miniconda3-latest-Linux-x86_64.sh -b \
+    #     && rm -f Miniconda3-latest-Linux-x86_64.sh \
+    #     && echo "Running $(conda --version)" && \
+    #     conda init bash && \
+    #     . /root/.bashrc
+    # RUN INSTALL_PATH=~/anaconda && \
+    #     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+    #     bash Miniconda3-latest-Linux-x86_64.sh -fbp $INSTALL_PATH && \
+    #     rm -f Miniconda3-latest-Linux-x86_64.sh \
+    # ENV PATH=/root/anaconda/bin:$PATH
+
+    # RUN . ~/anaconda/bin/activate && \
+    #     conda install nb_conda_kernels -y && \
+    #     conda deactivate  && \
+    #     ## && \
+    #     conda create --name mlenv python==3.7.5 -y && \
+    #     conda activate mlenv && \
+    #     conda install nb_conda_kernels -y && \
+    #     conda deactivate
+
 # ==================================================================
 # JupyterLab & Notebook
 # ------------------------------------------------------------------
-
     # Based on https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip
 
     RUN $PIP_INSTALL \
@@ -289,6 +312,7 @@
         jupyter nbextension enable toc2/main && \
         jupyter nbextension enable jupyter_resource_usage/main
 
+
 # ==================================================================
 # Add Jupyter Notebook configurations
 # ------------------------------------------------------------------
@@ -302,6 +326,9 @@
     COPY notebook.json ./
     RUN rm ~/.jupyter/nbconfig/notebook.json && mv ./notebook.json ~/.jupyter/nbconfig/
 
+    # Add Jupyter black extension
+    RUN jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip --user && \
+        jupyter nbextension enable jupyter-black-master/jupyter-black
 
 # ==================================================================
 # Startup
