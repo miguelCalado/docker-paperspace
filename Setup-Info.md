@@ -112,6 +112,7 @@ For the full python packages consult [dependencies.rst](dependencies.rst) - it w
 | ExecuteTime | latest | Notebook extension | jupyter nbextension | Display when each cell has been executed and how long it took |
 | toc2 | latest | Notebook extension | jupyter nbextension | Displays a table of content based on cell headers |
 | jupyter_resource_usage | latest | Notebook extension | jupyter nbextension | Displays notebook memory usage + CPU and GPU utilization|
+| jupyter black | latest | Notebook extension | jupyter nbextension | Button and macro that formats the code cells with `Black`|
 
 ### Macros
 
