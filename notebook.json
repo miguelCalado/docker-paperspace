@@ -8,7 +8,8 @@
     "highlight_selected_word/main": true,
     "execute_time/ExecuteTime": true,
     "toc2/main": true,
-    "jupyter_resource_usage/main": true
+    "jupyter_resource_usage/main": true,
+    "jupyter-black-master/jupyter-black": true
   },
   "Cell": {
     "cm_config": {

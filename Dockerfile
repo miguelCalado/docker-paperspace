@@ -298,8 +298,7 @@
             jupyter_resource_usage==0.7.1
 
     # Enable nbextensions and menubar
-    RUN jupyter nbextensions_configurator enable --user && \
-        jupyter contrib nbextension install --user
+    RUN 
 
     # Enable Jupyter Notebook extensions
     RUN jupyter nbextension enable spellchecker/main && \
@@ -310,7 +309,9 @@
         jupyter nbextension enable highlight_selected_word/main && \
         jupyter nbextension enable execute_time/ExecuteTime && \
         jupyter nbextension enable toc2/main && \
-        jupyter nbextension enable jupyter_resource_usage/main
+        jupyter nbextension enable jupyter_resource_usage/main && \
+        jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip --user && \
+        jupyter nbextension enable jupyter-black-master/jupyter-black
 
 
 # ==================================================================
@@ -325,10 +326,7 @@
     # Get predefined extensions and macros
     COPY notebook.json ./
     RUN rm ~/.jupyter/nbconfig/notebook.json && mv ./notebook.json ~/.jupyter/nbconfig/
-
-    # Add Jupyter black extension
-    RUN jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip --user && \
-        jupyter nbextension enable jupyter-black-master/jupyter-black
+        
 
 # ==================================================================
 # Startup
