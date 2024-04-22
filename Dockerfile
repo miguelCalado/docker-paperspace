@@ -196,6 +196,7 @@
         ipykernel==6.15.1 \
         ipywidgets==7.7.1 \
         Cython==0.29.30 \
+        traitlets==5.9.0 \
         tqdm==4.64.0 \
         gdown==4.5.1 \
         xgboost==1.6.1 \ 
