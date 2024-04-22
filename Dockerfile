@@ -298,7 +298,8 @@
             jupyter_resource_usage==0.7.1
 
     # Enable nbextensions and menubar
-    RUN 
+    RUN jupyter nbextensions_configurator enable --user && \
+        jupyter contrib nbextension install --user
 
     # Enable Jupyter Notebook extensions
     RUN jupyter nbextension enable spellchecker/main && \
