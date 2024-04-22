@@ -77,8 +77,6 @@ google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
 googleapis-common-protos==1.58.0
 gql==3.0.0a6
-gradient==2.0.5
-gradient-utils==0.5.0
 graphql-core==3.1.7
 greenlet==2.0.2
 grpcio==1.51.1

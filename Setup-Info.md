@@ -41,7 +41,6 @@ The full specications are available in the following tables:
 | ipython | 8.4.0 | pip3 |
 | ipykernel | 6.15.1 | pip3 |
 | ipywidgets | 7.7.1 | pip3 |
-| gradient | 2.0.5 | pip3 |
 | Cython | 0.29.30 | pip3 |
 | tqdm | 4.64.0 | pip3 |
 | gdown | 4.5.1 | pip3 |
